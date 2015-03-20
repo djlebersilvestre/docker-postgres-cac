@@ -11,7 +11,7 @@ curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-ca
 curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/install.sh"    -o $scripts/install.sh
 curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/setup.sh"      -o $scripts/setup.sh
 curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/svscanboot.sh" -o $scripts/svscanboot.sh
-chmod +x $scripts
+chmod +x -R $scripts
 
 case "$1" in
   all)
