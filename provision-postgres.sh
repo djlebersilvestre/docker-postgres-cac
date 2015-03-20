@@ -6,7 +6,7 @@ scripts=${0%/*}/provision-steps
 rm -rf $scripts
 mkdir $scripts
 
-github="https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-debian7.4/master/provision-steps"
+github="https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-debian74/master/provision-steps"
 curl -sSL "$github/usrgrp.sh"     -o $scripts/usrgrp.sh
 curl -sSL "$github/packages.sh"   -o $scripts/packages.sh
 curl -sSL "$github/utf8.sh"       -o $scripts/utf8.sh
