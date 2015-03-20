@@ -1,7 +1,17 @@
 #!/bin/bash
 
 set -e
-scripts=${0%/*}/provision-steps
+
+scripts=${0%/*}/provision-steps2
+rm -rf $scripts
+mkdir $scripts
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/usrgrp.sh"     -o $scripts/usrgrp.sh
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/packages.sh"   -o $scripts/packages.sh
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/utf8.sh"       -o $scripts/utf8.sh
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/install.sh"    -o $scripts/install.sh
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/setup.sh"      -o $scripts/setup.sh
+curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/svscanboot.sh" -o $scripts/svscanboot.sh
+chmod +x $scripts
 
 case "$1" in
   all)
