@@ -17,6 +17,7 @@ pg_setup() {
 }
 
 pg_start() {
+  pg_setup
   pg_stop
   docker start $DKR_PG_CONTAINER
 }
