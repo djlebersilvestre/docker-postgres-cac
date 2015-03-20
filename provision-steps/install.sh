@@ -16,5 +16,3 @@ mkdir -p /var/run/postgresql && chown -R postgres:postgres /var/run/postgresql
 chmod g+s /run/postgresql && chown -R postgres:postgres /run/postgresql
 echo "export PATH=$PATH:/usr/lib/postgresql/$pg_major/bin" >> /etc/profile
 source /etc/profile
-
-exit 0

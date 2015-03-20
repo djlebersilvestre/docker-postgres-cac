@@ -36,5 +36,3 @@ echo "Setting the new password"
 su postgres sh -lc "postgres --single -jE" <<-EOSQL
   ALTER USER postgres WITH ENCRYPTED PASSWORD '$passwd';
 EOSQL
-
-exit 0

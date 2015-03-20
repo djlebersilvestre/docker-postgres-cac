@@ -1,7 +1,13 @@
 #!/bin/bash
 
-set -e
+if id -g "postgres" > /dev/null 2>&1; then
+  echo "Group postgres already exists"
+else
+  groupadd -r postgres
+fi
 
-groupadd -r postgres && useradd -r -g postgres postgres
-
-exit 0
+if id -u "postgres" > /dev/null 2>&1; then
+  echo "User postgres already exists"
+else
+  useradd -r -g postgres postgres
+fi
