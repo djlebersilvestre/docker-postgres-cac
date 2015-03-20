@@ -41,5 +41,4 @@ VOLUME /data/postgres
 WORKDIR /data/postgres
 
 EXPOSE 5432
-#TODO: use an entrypoint to auto load /etc/profile and remove the ENV docker instructions
 CMD [ "svscanboot" ]
