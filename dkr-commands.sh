@@ -12,7 +12,7 @@ pg_build() {
 
 pg_setup() {
   if ! docker ps -a | grep -q " $DKR_PG_CONTAINER "; then
-    docker run --name $DKR_PG_CONTAINER -e POSTGRES_PASSWORD=$PG_PASS -d -p $PG_HOST:$PG_PORT:$PG_PORT $DKR_PG_IMAGE
+    docker run --name $DKR_PG_CONTAINER -d -p $PG_HOST:$PG_PORT:$PG_PORT $DKR_PG_IMAGE
   fi
 }
 
@@ -31,7 +31,7 @@ pg_stop() {
 }
 
 pg_client() {
-  docker run --rm -it --link $DKR_PG_CONTAINER:$DKR_PG_CONTAINER --rm $DKR_PG_IMAGE sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
+  docker run --rm -it --link $DKR_PG_CONTAINER:$DKR_PG_CONTAINER $DKR_PG_IMAGE sh -c 'exec psql -h "$POSTGRES_PORT_5432_TCP_ADDR" -p "$POSTGRES_PORT_5432_TCP_PORT" -U postgres'
 }
 
 pg_console() {
