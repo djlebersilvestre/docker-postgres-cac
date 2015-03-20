@@ -2,7 +2,7 @@
 
 set -e
 
-scripts=${0%/*}/provision-steps2
+scripts=${0%/*}/provision-steps
 rm -rf $scripts
 mkdir $scripts
 curl -sSL "https://raw.githubusercontent.com/djlebersilvestre/docker-postgres-cac/master/provision-steps/usrgrp.sh"     -o $scripts/usrgrp.sh
