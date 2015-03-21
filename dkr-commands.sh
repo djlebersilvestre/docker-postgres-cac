@@ -7,7 +7,7 @@ PG_HOST=127.0.0.1
 PG_PORT=5432
 
 pg_build() {
-  docker build -t $DKR_PG_IMAGE https://github.com/djlebersilvestre/docker-postgres-cac.git
+  docker build -t $DKR_PG_IMAGE https://github.com/djlebersilvestre/docker-postgres-debian74.git
 }
 
 pg_setup() {
