@@ -1,4 +1,4 @@
-# docker-postgres-cac
+# docker-postgres-debian74
 ==================
 
 Dockerfile to build an image of Postgres 9.4.1 over a Debian 7.4. The goal is
@@ -23,7 +23,7 @@ djlebersilvestre/postgres   9.4.1               7c4d4f1185ec        4 seconds ag
 ```
 Or you can build directly from git:
 ```
-$ docker build -t djlebersilvestre/postgres:9.4.1 https://github.com/djlebersilvestre/docker-postgres-cac.git
+$ docker build -t djlebersilvestre/postgres:9.4.1 https://github.com/djlebersilvestre/docker-postgres-debian74.git
 ```
 
 2. Start the server:
