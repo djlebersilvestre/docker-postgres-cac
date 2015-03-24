@@ -25,6 +25,7 @@ ENV LANG en_US.utf8
 # Install postgres 9.4.1
 COPY provision-steps/install.sh /steps/install.sh
 RUN /steps/install.sh
+RUN rm -rf /var/lib/apt/lists/*
 ENV PATH $PATH:/usr/lib/postgresql/9.4/bin
 
 # Configure postgres (default data dir)
